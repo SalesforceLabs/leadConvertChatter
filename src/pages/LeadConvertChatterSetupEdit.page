@@ -1,0 +1,48 @@
+<apex:page controller="LeadConvertChatterController" sidebar="FALSE">
+    <apex:sectionHeader title="Lead Convert Chatter Settings" subtitle="Edit Settings" />
+    <apex:form >
+        <apex:pageBlock title="Edit Settings" id="thePageBlock">
+            <apex:pagemessages />
+            <b><Font Color="#FF0000"></Font></b>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!save}"/>&nbsp;&nbsp;&nbsp;   
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>        
+           <apex:pageBlockSection title="Where should Chatter people posts on the Lead move upon Lead Convert?">
+                <table >
+                    <tbody>
+                    <tr>
+                        <td>
+                            <apex:inputCheckbox value="{!setting.Contact__c}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <apex:inputCheckbox value="{!setting.Account__c}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <apex:inputCheckbox value="{!setting.Opportunity__c}"/>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>                    
+
+            </apex:pageBlockSection>            
+
+           <apex:pageBlockSection title="Should Chatter posts be moved on Lead or Contact merge?">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>   
+                            <apex:inputCheckbox value="{!setting.MergeLeadContact__c}"/>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </apex:pageBlockSection>              
+            
+        </apex:pageBlock>                            
+    </apex:form>
+</apex:page>

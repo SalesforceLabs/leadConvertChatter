@@ -1,0 +1,48 @@
+<apex:page controller="LeadConvertChatterController" sidebar="FALSE" action="{!defaultSetting}">
+    <apex:sectionHeader title="Lead Convert Chatter Settings" subtitle="Edit Settings" />
+    <apex:form >
+        <apex:pageBlock title="Edit Settings" id="thePageBlock">
+            <apex:pagemessages />
+            <b><Font Color="#FF0000"></Font></b>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Edit" action="{!editSetting}"/>&nbsp;&nbsp;&nbsp;   
+            </apex:pageBlockButtons>        
+ 
+           <apex:pageBlockSection title="Where should Chatter people posts on the Lead move upon Lead Convert?">
+                <table >
+                    <tbody>
+                    <tr>
+                        <td>
+                            <apex:outputField value="{!setting.Contact__c}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <apex:outputField value="{!setting.Account__c}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <apex:outputField value="{!setting.Opportunity__c}"/>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>                    
+
+            </apex:pageBlockSection>            
+           <apex:pageBlockSection title="Should Chatter posts be moved on Lead or Contact merge?">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>   
+                            <apex:outputField value="{!setting.MergeLeadContact__c}"/>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </apex:pageBlockSection>              
+
+        </apex:pageBlock>                            
+    </apex:form>
+
+</apex:page>
